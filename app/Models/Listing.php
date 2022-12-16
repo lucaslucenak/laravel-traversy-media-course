@@ -22,4 +22,14 @@
                     ],
                 ];
         }
+
+        public static function findById($id) {
+            $listings = self::getAll();
+
+            foreach($listings as $listing) {
+                if ($listing['id'] == $id) {
+                    return $listing;
+            }
+        }
     }
+}

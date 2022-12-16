@@ -35,14 +35,22 @@ Route::get('/post-with-ddd/{id}', function($id) {
 })->where('id', '[0-9]+');
 
 // Get params from URL
-Route::get('search', function(Request $request) {
+Route::get('/search', function(Request $request) {
     dd($request->name . ' ' . $request->city);
 });
 
 // Foreach example
-Route::get('foreach-example', function(Request $request) {
+Route::get('/foreach-example', function(Request $request) {
     return view('foreachExample', [
         'heading' => 'Foreach Example',
         'listings' => Listing::getAll()
+    ]);
+});
+
+// Single Listing
+Route::get('/listing/{id}', function($id) {
+    return view('listing', [
+        'heading' => 'Heading for Single Listing',
+        'listing' => Listing::findById($id)
     ]);
 });
