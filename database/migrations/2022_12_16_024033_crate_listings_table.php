@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('listing', function(Blueprint $table) {
+        Schema::create('listings', function(Blueprint $table) {
             $table->id();
-            $table->sting('title');
+            $table->string('title');
             $table->string('tags');
             $table->string('company_name');
             $table->longText('description');
             $table->timestamps();
-        })
+        });
         //
     }
 

@@ -40,10 +40,10 @@ Route::get('/search', function(Request $request) {
 });
 
 // Foreach example
-Route::get('/foreach-example', function(Request $request) {
-    return view('foreachExample', [
+Route::get('/listing', function(Request $request) {
+    return view('listings', [
         'heading' => 'Foreach Example',
-        'listings' => Listing::getAll()
+        'listings' => Listing::all()
     ]);
 });
 
