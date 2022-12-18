@@ -51,6 +51,6 @@ Route::get('/listing', function(Request $request) {
 Route::get('/listing/{id}', function($id) {
     return view('listing', [
         'heading' => 'Heading for Single Listing',
-        'listing' => Listing::findById($id)
+        'listing' => Listing::find($id)
     ]);
 });

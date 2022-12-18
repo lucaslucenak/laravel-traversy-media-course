@@ -7,10 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+
+    @extends('layout')
+    
+    @section('content')
         <h1>{{ $heading }}</h1>
         <p>{{ $listing['id'] }}</p>
         <p>{{ $listing['title'] }}</p>
         <p>{{ $listing['content'] }}</p>
+    @endsection
+
 
 </body>
 </html>
