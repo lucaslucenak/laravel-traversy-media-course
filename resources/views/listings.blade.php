@@ -11,6 +11,7 @@
 
     @section('content')
     @include('partials._hero')
+    @include('partials._search')
     <div class="lg:grid lg:gird-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
 
         @foreach ($listings as  $listing)
@@ -39,8 +40,6 @@
         </div>
         @endforeach
     </div>
-
-
     @endsection
 </body>
 </html>

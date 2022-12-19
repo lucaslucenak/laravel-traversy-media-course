@@ -9,12 +9,13 @@
 <body>
 
     @extends('layout')
-    
+    @include('partials._search')
+
     @section('content')
         <h1>{{ $heading }}</h1>
-        <p>{{ $listing['id'] }}</p>
-        <p>{{ $listing['title'] }}</p>
-        <p>{{ $listing['content'] }}</p>
+        <p>{{ $listing->title }}</p>
+        <p>{{ $listing->tags }}</p>
+        <p>{{ $listing->description }}</p>
     @endsection
 
 
