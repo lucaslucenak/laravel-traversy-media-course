@@ -49,8 +49,14 @@ Route::get('/listing', function(Request $request) {
 
 // Single Listing
 Route::get('/listing/{id}', function($id) {
-    return view('listing', [
-        'heading' => 'Heading for Single Listing',
-        'listing' => Listing::find($id)
-    ]);
+
+    if (Listing::find($id)) {
+        return view('listing', [
+            'listing' => Listing::find($id)
+        ]);
+    }
+    else {
+        abort('404');
+    }
+
 });
