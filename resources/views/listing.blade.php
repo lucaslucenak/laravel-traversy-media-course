@@ -14,17 +14,12 @@
     @section('content')
     <a href="/listing" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back</a>
     <div class="mx-4">
-        <div class="bg-gray-50 border border-gray-200 p-10 rounded">
+        <x-card class="p-10">
             <div class="flex flex-col items-center justify-center text-center">
                 <img class="w-48 mr-6 mb-6" src={{asset('img/no-image.png')}} alt="" />
                 <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
                 <div class="text-xl font-bold mb-4">{{$listing->company_name}}</div>
-                <ul class="flex">
-                    @foreach (explode(',', $listing->tags) as $tag)
-                    <li class="bg-black text-white rounded-xl px-3 py-1 mr-2">
-                    <a href="#">{{$tag}}</a>
-                    @endforeach
-                </ul>
+                    <x-listing-tags :tags="$listing->tags"/>
                 <div class="text-lg my-4">
                     <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
                 </div>
@@ -39,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </x-card>
     </div>
     @endsection
 
