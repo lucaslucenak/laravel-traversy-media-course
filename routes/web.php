@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Listing;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,23 +41,7 @@ Route::get('/search', function(Request $request) {
 });
 
 // Foreach example
-Route::get('/listing', function(Request $request) {
-    return view('listings', [
-        'heading' => 'Foreach Example',
-        'listings' => Listing::all()
-    ]);
-});
+Route::get('/listing', [ListingController::class, 'index']);
 
 // Single Listing
-Route::get('/listing/{id}', function($id) {
-
-    if (Listing::find($id)) {
-        return view('listing', [
-            'listing' => Listing::find($id)
-        ]);
-    }
-    else {
-        abort('404');
-    }
-
-});
+Route::get('/listing/{id}', [ListingController::class, 'show']);
