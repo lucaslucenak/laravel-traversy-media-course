@@ -43,5 +43,10 @@ Route::get('/search', function(Request $request) {
 // Foreach example
 Route::get('/listing', [ListingController::class, 'index']);
 
+// Create Form
+Route::get('/listing/create', [ListingController::class, 'create']);
+
 // Single Listing
 Route::get('/listing/{id}', [ListingController::class, 'show']);
+
+
