@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('website');
             $table->string('email');
+            $table->string('logo_path')->nullable();
             $table->timestamps();
         });
         //
